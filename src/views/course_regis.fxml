@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.control_courseRegis">
+   <children>
+      <Pane prefHeight="67.0" prefWidth="800.0" style="-fx-background-color: RED;">
+         <children>
+            <Label layoutX="297.0" layoutY="18.0" text="Đăng Kí Môn Học" textFill="#d7c8c8">
+               <font>
+                  <Font name="Bauhaus 93" size="27.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView fill="#13cad6" glyphName="SIGN_OUT" layoutX="729.0" layoutY="45.0" onMouseClicked="#logout" size="35" />
+         </children>
+      </Pane>
+      <TextField fx:id="txtsearch" layoutX="60.0" layoutY="109.0" prefHeight="36.0" prefWidth="676.0" />
+      <Label layoutX="32.0" layoutY="25.0" text="Hello: " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="username" layoutX="94.0" layoutY="25.0" text="user" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TableView fx:id="table_Search" layoutX="60.0" layoutY="145.0" prefHeight="212.0" prefWidth="676.0">
+        <columns>
+          <TableColumn fx:id="subcodecol" prefWidth="133.0" text="mã môn học" />
+          <TableColumn fx:id="namecol" prefWidth="229.0" text="tên môn học" />
+            <TableColumn fx:id="classcodecol" prefWidth="109.0" text="mã lớp" />
+            <TableColumn fx:id="numcol" prefWidth="73.0" text="số tín chỉ" />
+            <TableColumn fx:id="totalcol" prefWidth="71.0" text="sĩ số" />
+            <TableColumn fx:id="restcol" prefWidth="71.0" text="còn lại" />
+        </columns>
+      </TableView>
+      <Button layoutX="677.0" layoutY="110.0" mnemonicParsing="false" onAction="#btn_search" prefHeight="36.0" prefWidth="58.0" text="Search" />
+      <TableView fx:id="table_waitRegister" layoutX="59.0" layoutY="388.0" prefHeight="170.0" prefWidth="525.0">
+        <columns>
+          <TableColumn fx:id="registMamhCol" prefWidth="143.0" text="Mã môn học" />
+          <TableColumn fx:id="regisTenmhCol" prefWidth="118.0" text="tên môn học" />
+            <TableColumn fx:id="regisMalopCol" prefWidth="125.0" text="mã lớp học" />
+            <TableColumn fx:id="regisSotcCol" prefWidth="101.0" text="số tín chỉ" />
+        </columns>
+      </TableView>
+      <Button layoutX="60.0" layoutY="336.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="25.0" prefWidth="676.0" text="refresh table" />
+      <Label layoutX="61.0" layoutY="87.0" text="(*) Double click để đăng kí môn học" textFill="#ff0404">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="366.0" prefHeight="19.0" prefWidth="409.0" text="(*) click vào môn học để hủy hoặc lưu để lưu các môn học vào CSDL" textFill="#ff0404">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="btndel" layoutX="609.0" layoutY="427.0" mnemonicParsing="false" onAction="#deleteCourse" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: red;" text="hủy" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button layoutX="609.0" layoutY="490.0" mnemonicParsing="false" onAction="#save" prefHeight="29.0" prefWidth="127.0" style="-fx-background-color: green;" text="lưu vào CSDL" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
